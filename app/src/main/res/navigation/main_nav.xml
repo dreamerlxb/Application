@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/mainFragment"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.myapplication.ui.main.MainFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.myapplication.ui.login.LoginFragment"
+        android:label="登录"
+        tools:layout="@layout/login_fragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/registerFragment"
+        android:name="com.example.myapplication.ui.register.RegisterFragment"
+        android:label="注册"
+        tools:layout="@layout/register_fragment" >
+        <action
+            android:id="@+id/action_registerFragment_to_registerSmsCodeFragment"
+            app:destination="@id/registerSmsCodeFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/registerSmsCodeFragment"
+        android:name="com.example.myapplication.ui.register.RegisterSmsCodeFragment"
+        android:label="fragment_register_sms_code"
+        tools:layout="@layout/fragment_register_sms_code" />
+</navigation>
